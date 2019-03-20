@@ -58,13 +58,13 @@ spec:
       containers:
         - name: influxdata-operator
           # Replace this with the built image name
-          image: REPLACE_IMAGE
+          image: influxdb-operator:v1.0
           ports:
           - containerPort: 60000
             name: metrics
           command:
           - influxdata-operator
-          imagePullPolicy: Always
+          imagePullPolicy: IfNotPresent
           env:
             - name: WATCH_NAMESPACE
               valueFrom:
@@ -262,7 +262,7 @@ spec:
   # Add fields here
   size: 1
   baseImage: influxdb:1.6.3-alpine
-  imagePullPolicy: Always
+  imagePullPolicy: IfNotPresent
   pod:
     resources:
       limits:
