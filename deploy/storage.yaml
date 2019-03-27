@@ -22,10 +22,10 @@ spec:
     required:
       nodeSelectorTerms:
       - matchExpressions:
-        - key: kubernetes.io/hostname
+        - key: beta.kubernetes.io/arch
           operator: In
           values:
-          - kube-node1 
+          - amd64
 ---
 kind: PersistentVolumeClaim
 apiVersion: v1
